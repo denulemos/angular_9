@@ -18,4 +18,10 @@
 <br>
  <h4>Double Data Binding</h4>
 
+ <h5>Con metodo</h5>
+  <input type="text" [value] = "valor3" (input)="modificar($event)"> {{valor3}}
+<br>
+ <h5>Con ngmodel </h5>
+ <input type="text" [(ngModel)]="valor2"> {{valor2}}
+
 </div>

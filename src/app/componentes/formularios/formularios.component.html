@@ -1,4 +1,36 @@
 <div class="jumbotron">
   <h2>Formularios</h2>
   <hr>
+  <h4>Template Driven</h4>
+  <br>
+
+  <form action="" autocomplete="off">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" class="form-control"name="nombre" [(ngModel)] = "formu.nombre">
+    </div>
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input type="text" id="apellido" class="form-control"name="apellido" [(ngModel)] = "formu.apellido">
+    </div>
+    <div class="form-group">
+      <label for="edad">Edad</label>
+      <input type="text" id="edad" class="form-control"name="edad" [(ngModel)] = "formu.edad">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" class="form-control"name="email" [(ngModel)] = "formu.email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" class="form-control"name="password" [(ngModel)] = "formu.password">
+    </div>
+
+    <button class="btn btn-success mt-3" (click)="enviar()">Enviar</button>
+  </form>
+
+  <br>
+  <h4>Reactive Form</h4>
+  <br>
+  <h3>Continuara >:)</h3>
 </div>

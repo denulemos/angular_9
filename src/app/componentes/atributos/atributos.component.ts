@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 
 @Component({
   selector: 'app-atributos',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AtributosComponent implements OnInit {
 
-  constructor() { }
+  estado1: boolean = true;
+  estado2: boolean = true;
+  color: string = '';
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

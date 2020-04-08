@@ -1,4 +1,76 @@
 <div class="jumbotron">
   <h2>Estructura</h2>
   <hr>
+
+  <h4><u>*ngIf</u></h4>
+  <br>
+
+  <button class="btn btn-success mb-3" (click)="mostrar=!mostrar">{{mostrar?'Ocultar':'Mostrar'}}</button>
+  <!--No es necesario interpolar dentro del *ngIf-->
+  <p *ngIf="mostrar;else oculto" class="alert alert-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
+    vero obcaecati quam, nemo itaque nostrum voluptatibus suscipit labore aliquid accusantium dolorem illum magnam
+    exercitationem adipisci repudiandae reprehenderit perspiciatis. Et, maxime!</p>
+
+  <ng-template #oculto>
+    <div class="alert alert-warning">
+      <p>Elemento oculto</p>
+    </div>
+  </ng-template>
+
+  <br>
+  <hr>
+
+  <h4><u>Directiva *ngFor</u></h4>
+
+  <br>
+  <ul>
+    <li *ngFor="let persona of personas">{{persona}}</li>
+  </ul>
+  <br>
+
+  <button class="btn btn-warning mb-3" (click)="agregarAlumno()">Agregar Alumnos</button>
+<div *ngIf="alumnos.length != 0; else ninguno">
+  <table class="table">
+    <tr class="bg-success text-white">
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Edad</th>
+      <th>Hizo curso</th>
+      <th>Foto</th>
+    </tr>
+    <tr *ngFor="let alumno of alumnos" class="bg-info text-white">
+      <td>{{alumno.nombre}}</td>
+      <td>{{alumno.apellido}}</td>
+      <td>{{alumno.edad}}</td>
+      <td>{{alumno.curso?'Si':'No'}}</td>
+      <td>
+        <img [src]="alumno.foto" width="50">
+    </tr>
+</table>
 </div>
+
+<!--Si el tamaño del array de alumnos es cero, muestra este template-->
+<ng-template #ninguno>
+
+  <div class ="alert alert-danger">
+    No hay alumnos
+  </div>
+</ng-template>
+<br>
+<!--Por cada alumno genera un DIV-->
+<!--Index as i mete el index de cada alumno en la variable i-->
+<div class="media alert alert-info" *ngFor="let alumno of alumnos; index as i">
+  <img [src]="alumno.foto" width="150">
+  <div class="media-body ml-3">
+    <h5><u>Alumno</u></h5>
+    <br>
+    <p>Nombre: </p> <b>{{alumno.nombre}} {{alumno.apellido}}</b>
+  <p>Edad: <i>{{alumno.edad}}</i></p>
+  Hizo el curso <input type="checkbox" [(ngModel)]="alumno.curso">
+<!--Borra alumnos pasando como parametro a la funcion el index-->
+  <button class="btn btn-danger ml-3" (click)="eliminarAlumno(i)">Eliminar</button>
+  </div>
+
+  </div>
+</div>
+

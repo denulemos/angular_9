@@ -1,4 +1,31 @@
 <div class="jumbotron">
   <h2>Atributos</h2>
   <hr>
+  <h4>[ngStyle]</h4>
+  <br>
+  <button class = "btn btn-warning mb-3" (click)="estado1=!estado1">Cambiar Fondo {{estado1}}</button>
+  <p [ngStyle]="{'color' : 'black', 'background-color' : estado1?'pink':'lime' , 'padding': '10px'}">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam ipsa rerum officia quasi natus, optio autem harum praesentium earum, quis fugit rem voluptatem vel. Magnam ut tempore nihil unde ratione?
+  </p>
+  <h4>[ngClass]</h4>
+  <br>
+  <button class = "btn btn-warning mb-3" (click)="estado2=!estado2">Cambiar Fondo {{estado2}}</button>
+  <p [ngClass]="{'btn': true , 'btn-success' : estado2 , 'btn-danger': !estado2} ">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam ipsa rerum officia quasi natus, optio autem harum praesentium earum, quis fugit rem voluptatem vel. Magnam ut tempore nihil unde ratione?
+  </p>
+  <br>
+  <h4>[Directivas Personalizadas]</h4>
+  <br>
+  <!--AppResaltar toma el valor del Check-->
+  <p [appResaltar]="color" [colorBase] ="'magenta'">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam ipsa rerum officia quasi natus, optio autem harum praesentium earum, quis fugit rem voluptatem vel. Magnam ut tempore nihil unde ratione?
+  </p>
+
+  <div>
+    <!--El check define el valor de appResaltar, que responde a la variable Color-->
+    <input type="radio" name="colors" (click)="color='blue'">BLUE
+    <input type="radio" name="colors" (click)="color='brown'">BROWN
+    <input type="radio" name="colors" (click)="color='crimson'">CRIMSON
+    <input type="radio" name="colors" (click)="color=''" checked>NOTHING
+  </div>
 </div>

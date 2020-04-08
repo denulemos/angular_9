@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntradasComponent implements OnInit {
 
+  mensaje : string = "Mensaje test"
+  valor : number = 1234
+  valor2 : number = 12345
+  valor3 : number = 123456
+  contador : number = 0
   constructor() { }
 
+  //OnInit implementation metodo
   ngOnInit(): void {
   }
 

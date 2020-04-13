@@ -8,7 +8,9 @@ import {
   Validators,
 
 } from '@angular/forms';
-import {VerificarEspacios} from 'src/app/validaciones/espacios.validator'
+import {
+  VerificarEspacios
+} from 'src/app/validaciones/espacios.validator'
 
 @Component({
   selector: 'app-formularios',
@@ -29,7 +31,7 @@ export class FormulariosComponent implements OnInit {
   //Primer metodo que se ejecuta ante la creacion del componente en la vista
   constructor(private fb: FormBuilder) {
     this.f = fb.group({
-      nombre: ['',  Validators.compose([
+      nombre: ['', Validators.compose([
         Validators.required,
         VerificarEspacios
       ])],
@@ -44,7 +46,12 @@ export class FormulariosComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    //GET con Fetch
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+      .then(rta => console.log(rta)) //Va a mostrar todos los objetos que tiene
+  }
   enviar() {
     //Reinicio inputs
     this.formu = {
@@ -55,8 +62,16 @@ export class FormulariosComponent implements OnInit {
       password: ''
     }
   }
+  //ENVIO DE DATOS DE UN REACTIVE FORM A UN BACKEND
   enviar2() {
-    //Reset formulario
+    //fetch post, para mandar data a la nube, ya es un metodo de navegador
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'post',
+      body: JSON.stringify(this.f.value), //Debo pasarlo a formato JSON
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(response => response.json()).then(rta => console.log(rta))
     this.f.reset()
   }
 }

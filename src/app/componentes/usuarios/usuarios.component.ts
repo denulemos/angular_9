@@ -3,7 +3,8 @@ import {
   OnInit
 } from '@angular/core';
 import {
-  UsuariosService
+  UsuariosService,
+  IUsuario
 } from 'src/app/servicios/usuarios.service';
 
 @Component({
@@ -13,7 +14,8 @@ import {
 })
 export class UsuariosComponent implements OnInit {
 
-  usuarios: object[] = []
+  //Importo usuario del tipo IUsuario
+  usuarios: IUsuario[] = []
 
   constructor(private usuariosService: UsuariosService) {}
 
@@ -30,15 +32,15 @@ export class UsuariosComponent implements OnInit {
 
   //AGREGAR usuario
   enviarUsuario() {
-    this.usuariosService.postUsuario().subscribe(usuario => this.obtenerUsuarios());
+    this.usuariosService.postUsuario().subscribe((usuario: IUsuario) => this.obtenerUsuarios());
   }
 
   //ELIMINAR usuario
   borrarUsuario(id: number) {
-    this.usuariosService.deleteUsuario(id).subscribe(usuario => this.obtenerUsuarios())
+    this.usuariosService.deleteUsuario(id).subscribe((usuario: IUsuario) => this.obtenerUsuarios())
   }
 
-  actualizarUsuario(id: number){
-     this.usuariosService.putUsuario(id).subscribe(usuario => this.obtenerUsuarios())
+  actualizarUsuario(id: number) {
+    this.usuariosService.putUsuario(id).subscribe((usuario: IUsuario) => this.obtenerUsuarios())
   }
 }

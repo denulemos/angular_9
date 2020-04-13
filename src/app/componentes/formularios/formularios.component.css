@@ -1,8 +1,12 @@
 .jumbotron{
-  background:blue;
+  background:grey;
   color:white;
 }
 
 hr{
 background-color: #aaa;
+}
+
+pre{
+color:white;
 }

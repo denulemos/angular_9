@@ -8,6 +8,7 @@ import {
   FormsModule,
   ReactiveFormsModule
 } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 import {
   AppComponent
 } from './app.component';
@@ -38,6 +39,7 @@ import {
   functionClientesUseFactory,
   ClientesServiceUseClass
 } from './servicios/clientes.service';
+import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 
 @NgModule({
   declarations: [
@@ -47,13 +49,15 @@ import {
     AtributosComponent,
     FormulariosComponent,
     ResaltarDirective,
-    ClientesComponent
+    ClientesComponent,
+    UsuariosComponent
   ],
   //Importa otras librerias externas
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   //Servicios
 

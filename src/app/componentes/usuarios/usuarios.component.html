@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h2>Usuarios</h2>
+  <hr>
+
+  <button class="btn btn-success m-3" (click)="obtenerUsuarios()">GET Usuarios</button>
+  <button class="btn btn-info m-3" (click)="enviarUsuario()">POST Usuarios</button>
+
+  <div class="media alert alert-info" *ngFor=" let usuario of usuarios">
+    <img [src]="usuario.foto" width="250" alt="Photo">
+    <div class="media-body ml-3">
+      <h4>Creado: {{usuario.createdAt}}</h4>
+      <p>Nombre: <b>{{usuario.nombre}}</b></p>
+      <p>Descripcion: <i>{{usuario.descripcion}}</i></p>
+      <button class="btn btn-danger m-3" (click)="borrarUsuario(usuario.id)">DELETE Usuario</button>
+      <button class=" btn btn-warning mt-3" (click)="actualizarUsuario(usuario.id)">PUT Usuario</button>
+    </div>
+  </div>
+
+</div>

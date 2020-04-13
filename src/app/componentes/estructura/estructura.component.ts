@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ClientesService } from 'src/app/servicios/clientes.service';
 @Component({
   selector: 'app-estructura',
   templateUrl: './estructura.component.html',
@@ -20,8 +20,11 @@ export class EstructuraComponent implements OnInit {
     {nombre: 'Pablo', apellido: 'Mei', edad: 25, curso: false, foto: 'https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/7_avatar-512.png'},
     {nombre: 'Cecilia', apellido: 'Picos', edad: 22, curso: true, foto: 'https://cdn3.iconfinder.com/data/icons/business-avatar-1/512/11_avatar-512.png'}
   ]
+clientes : string[] = []
 
-  constructor() { }
+constructor(private clientesService: ClientesService) {
+  this.clientes = this.clientesService.getClientes();
+}
 
   ngOnInit(): void {
   }

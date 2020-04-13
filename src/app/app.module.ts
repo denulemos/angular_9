@@ -8,6 +8,8 @@ import { AtributosComponent } from './componentes/atributos/atributos.component'
 import { FormulariosComponent } from './componentes/formularios/formularios.component';
 import { ResaltarDirective } from './directivas/resaltar.directive';
 import { VerificarEspacios } from './validaciones/espacios.validator';
+import { ClientesComponent } from './componentes/clientes/clientes.component';
+ import { ClientesService, ClientesServiceUseExisting, ClientesServiceUseClass } from './servicios/clientes.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { VerificarEspacios } from './validaciones/espacios.validator';
     EstructuraComponent,
     AtributosComponent,
     FormulariosComponent,
-    ResaltarDirective
+    ResaltarDirective,
+    ClientesComponent
   ],
   //Importa otras librerias externas
   imports: [
@@ -25,7 +28,19 @@ import { VerificarEspacios } from './validaciones/espacios.validator';
     ReactiveFormsModule
   ],
   //Servicios
-  providers: [],
+
+  providers: [
+    //Asi tendria que importarlo si no tuviera la directiva providedIn en el modulo
+    // ClientesService
+
+    //Si deseo cambiarle el nombre al provider
+    // {provide: ClientesService, useClass: ClientesServiceUseClass}
+
+    //USE EXISTING
+    {provide: ClientesService, useExisting: ClientesServiceUseExisting}
+
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

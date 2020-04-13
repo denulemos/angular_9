@@ -20,12 +20,15 @@
   <br>
   <hr>
 
-  <h4><u>Directiva *ngFor</u></h4>
+  <h4><u>Directiva *ngFor de Servicio</u></h4>
 
   <br>
   <ul>
-    <li *ngFor="let persona of personas">{{persona}}</li>
+    <li *ngFor="let cliente of clientes">
+      {{cliente}}
+    </li>
   </ul>
+
   <br>
 
   <button class="btn btn-warning mb-3" (click)="agregarAlumno()">Agregar Alumnos</button>

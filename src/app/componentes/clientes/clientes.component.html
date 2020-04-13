@@ -1,0 +1,14 @@
+<div class="jumbotron">
+  <h2>Clientes desde el servicio</h2>
+  <button (click)="borrarCliente()">Borro ultimo cliente</button>
+  <hr>
+  <input type="text" [(ngModel)] = "cliente">
+  <button (click) = "agregarCliente(cliente)">Agregar</button>
+  <hr>
+<ul>
+  <li *ngFor="let cliente of clientes">
+    {{cliente}}
+  </li>
+</ul>
+
+</div>

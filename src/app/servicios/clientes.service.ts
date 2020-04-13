@@ -2,6 +2,33 @@ import {
   Injectable
 } from '@angular/core';
 
+//CONFIGURACION USE FACTORY
+export class ClientesServiceUseFactory {
+
+  clientes: string[] = [
+    'Nombre1_useFac', 'Nombre2_useFac', 'Nombre3_useFac', 'Nombre4_useFac', 'Nombre5_useFac'
+  ]
+  constructor() {}
+
+  //Obtener cliente
+  getClientes() {
+    return this.clientes;
+  }
+  //Agregar cliente
+  pushClientes(cliente: string): void {
+    this.clientes.push(cliente)
+  }
+  //Sacar cliente desde el final
+  popCliente(): void {
+    this.clientes.pop()
+  }
+
+}
+
+export function functionClientesUseFactory(){
+return new ClientesServiceUseFactory()
+}
+
 //CONFIGURACION USE CLASS
 
 export class ClientesServiceUseClass {
@@ -23,8 +50,6 @@ export class ClientesServiceUseClass {
   popCliente(): void {
     this.clientes.pop()
   }
-
-
 }
 
 @Injectable({

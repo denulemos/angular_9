@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PadreComponent implements OnInit {
 
+  mensajeDelPadre : string;
+  mensajeDelHijo : string;
+  mensajeDelaHija : string;
+  mensajeAux : string = '';
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  public hablar(mensaje: string) {
+    this.mensajeDelPadre = mensaje;
+  }
+
+  escucharHijo(mensaje: string) {
+    console.log('mensaje del hijo');
+    this.mensajeDelHijo = mensaje;
+  }
+
+  escucharHija(mensaje: string) {
+    console.log('mensaje de la hija');
+    this.mensajeDelaHija = mensaje;
   }
 
 }

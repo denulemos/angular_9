@@ -23,7 +23,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
 
 //Tengo acceso al componente Panel de este modulo
 import { MimoduloModule } from './mimodulo/mimodulo.module';
-import { Mimodulo2Module } from './mimodulo2/mimodulo2.module';
+import { MimoduloModule2 } from './mimodulo2/mimodulo2.module';
 //Importo PanelComponent del Modulo
 import { PanelComponent } from './mimodulo/componentes/panel/panel.component';
 import { FamiliaComponent } from './mimodulo2/componentes/familia/familia.component';
@@ -68,7 +68,7 @@ const routes: Routes = [
 		),
 		//Importo mi modulo personalizado en el proyecto general
     MimoduloModule,
-    Mimodulo2Module
+    MimoduloModule2
 	],
 	//Servicios
 

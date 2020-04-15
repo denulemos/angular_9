@@ -1,42 +1,42 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import { HijoComponent } from '../hijo/hijo.component';
 
+
 @Component({
-	selector: 'app-madre',
-	templateUrl: './madre.component.html',
-	styleUrls: [ './madre.component.css' ]
+  selector: 'app-madre',
+  templateUrl: './madre.component.html',
+  styleUrls: ['./madre.component.css']
 })
-export class MadreComponent implements OnInit {
-	//Permite entrar en las propiedades y metodos del hijo haciendolos propios
-	// @ViewChild(HijoComponent, { static: false })
-	// hijo: HijoComponent;
+export class MadreComponent implements OnInit  {
 
-	// mensaje: string = '';
-   contador: number = 0;
-   refInterval : any
+  @ViewChild(HijoComponent, {static: false}) hijo : HijoComponent;
 
-	 constructor() {
-	 	console.log('Constructor madre');
-	 }
+  mensaje : string = '';
+  contador : number =  0
+  refInterval : any
 
-	 ngOnInit(): void {
-		this.refInterval(() => {
-			console.log('Soy la madre' + this.contador++);
-    }, 1000 //Cada un segundo saca un mensaje en consola
-    );
-		console.log('OnInit Madre');
-	 }
+  constructor() { 
+    console.log('constructor madre');
+  }
+  
+  //https://angular.io/guide/lifecycle-hooks
+  ngOnInit() {
+    this.refInterval = setInterval(() => {
+      console.log('Soy la madre ' + this.contador++)
+    },1000)
+    console.log('ngOnInit madre');
+  }
 
-	// //Chequeo de estados => Lifecycle hooks
-	// ngOnDestroy(): void {
-	// 	//Desaparece de la vista
-  //   console.log('OnDestroy Madre');
-  //   clearInterval(this.refInterval); //Para que no siga infinitamente contando
+  ngDoCheck() {
+    console.log('ngDoCheck madre');
+  }
 
-	// }
+  ngOnDestroy() {
+    console.log('ngOnDestroy madre');
+    clearInterval(this.refInterval)
+  }
 
-	// escuchar() {
-	// 	//Entra al objeto de referencia hijo y entra al objeto respuestaPapa, ya que puede acceder a todo lo del hijo, los metodos deben ser publicos
-	// 	this.mensaje = this.hijo.respuestaPapa;
-	// }
+  escuchar() {
+    this.mensaje = this.hijo.respuestaAlPadre;
+  }
 }

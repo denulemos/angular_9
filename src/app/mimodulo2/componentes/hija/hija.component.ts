@@ -1,5 +1,4 @@
-import { Component, OnInit, Output, Input } from '@angular/core';
-import { EventEmitter } from 'protractor';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-hija',
@@ -8,22 +7,19 @@ import { EventEmitter } from 'protractor';
 })
 export class HijaComponent implements OnInit {
 
-  // @Input('mensaje') mensajePapa : string;
-  // //Evento custom
-  // @Output() contestar = new EventEmitter();
+  @Input('mensaje') mensajeDePapa : string
+  @Output() contestar = new EventEmitter();
 
-  // respuestaPapa : string = ''
-  // mensajeAux : string = ''
+  mensajeAux : string = '';
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-  // hablar (mensaje:string){
-  //   console.log(mensaje)
-  //   this.respuestaPapa = mensaje
-  //   //Emision de evento, contestar es un evento
-  //   this.contestar.emit(mensaje)
-  // }
+  hablar(mensaje: string) {
+    console.log(mensaje);
+    this.contestar.emit(mensaje);
+  }
+
 }

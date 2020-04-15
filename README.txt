@@ -43,6 +43,9 @@ ng serve -o
 ng g miModulo
 *Es una clase que se puede ejecutar como modulo en app.module, con su clase. Es como una libreria externa nuestra
 
+--Crear directiva personalizada--
+ng g d directivas/resaltar
+
 --Crear componente dentro del modulo--
 ng g c mimodulo/componentes/panel
 *Si no existe la carpeta componentes, la crea junto con el componente "panel"

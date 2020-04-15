@@ -3,7 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 //Importar router
 import { Routes, RouterModule, Router } from '@angular/router';
+//Import para formularios y ngModel
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//Import para verbos http
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { EntradasComponent } from './componentes/entradas/entradas.component';

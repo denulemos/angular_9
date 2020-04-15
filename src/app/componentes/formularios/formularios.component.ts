@@ -48,7 +48,7 @@ export class FormulariosComponent implements OnInit {
 
   ngOnInit(): void {
     //GET con Fetch
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('https://5e94a070f591cb0016d8140c.mockapi.io/posts')
       .then(response => response.json())
       .then(rta => console.log(rta)) //Va a mostrar todos los objetos que tiene
   }
@@ -65,7 +65,7 @@ export class FormulariosComponent implements OnInit {
   //ENVIO DE DATOS DE UN REACTIVE FORM A UN BACKEND
   enviar2() {
     //fetch post, para mandar data a la nube, ya es un metodo de navegador
-    fetch('https://jsonplaceholder.typicode.com/posts', {
+    fetch('https://5e94a070f591cb0016d8140c.mockapi.io/posts', {
       method: 'post',
       body: JSON.stringify(this.f.value), //Debo pasarlo a formato JSON
       headers: {

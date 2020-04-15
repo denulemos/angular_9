@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+  <a class="navbar-brand" href="/">Inicio</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <!--RouterLink de bootstrap cambia el href por routerLink y routerLinkActive, que aplica estilos ante link activo-->
+        <a class="nav-link" routerLink="/entradas/12345" routerLinkActive="active"
+          >Entradas</a
+
+        ><!--Puedo pasar parametros como un ID desde routerLink, en este caso, 12345-->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/estructura" routerLinkActive="active"
+          >Estructura</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/atributos" routerLinkActive="active"
+          >Atributos</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/formularios" routerLinkActive="active"
+          >Formularios</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/clientes" routerLinkActive="active"
+          >Clientes</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/usuarios" routerLinkActive="active"
+          >Usuarios</a
+        >
+      </li>
+      <!--Incluyo el modulo Panel de mi modulo-->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/panel" routerLinkActive="active"
+          >Panel</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/familia" routerLinkActive="active"
+          >Familia</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

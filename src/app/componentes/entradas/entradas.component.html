@@ -1,27 +1,29 @@
-<div class="jumbotron">
-  <h2>Entradas</h2>
-  <hr>
+<div class="jumbotron"><!--Muestro el ID del parametro en el titulo-->
+  <h2>Entradas - id: {{ id }}</h2>
+  <hr />
 
   <h3><u>Data Binding</u></h3>
-  <br>
+  <br />
   <h4>Interpolacion</h4>
   <!--Interpolacion-->
- <p>{{mensaje}}</p>
+  <p>{{ mensaje }}</p>
 
- <h4>Property Binding</h4>
- <input type="text" value="{{valor}}"><br>
- <input type="text" [value]="valor2"><br>
-<br>
- <h4>Event Binding</h4>
-<button class="btn btn-warning mb-3" (click) = "contador=contador+1">Contador {{contador}}</button>
+  <h4>Property Binding</h4>
+  <input type="text" value="{{ valor }}" /><br />
+  <input type="text" [value]="valor2" /><br />
+  <br />
+  <h4>Event Binding</h4>
+  <button class="btn btn-warning mb-3" (click)="contador = contador + 1">
+    Contador {{ contador }}
+  </button>
 
-<br>
- <h4>Double Data Binding</h4>
+  <br />
+  <h4>Double Data Binding</h4>
 
- <h5>Con metodo</h5>
-  <input type="text" [value] = "valor3" (input)="modificar($event)"> {{valor3}}
-<br>
- <h5>Con ngmodel </h5>
- <input type="text" [(ngModel)]="valor2"> {{valor2}}
-
+  <h5>Con metodo</h5>
+  <input type="text" [value]="valor3" (input)="modificar($event)" />
+  {{ valor3 }}
+  <br />
+  <h5>Con ngmodel</h5>
+  <input type="text" [(ngModel)]="valor2" /> {{ valor2 }}
 </div>

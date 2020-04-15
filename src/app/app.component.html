@@ -1,13 +1,19 @@
 <div class="container">
   <div class="jumbotron mt-3">
-    <h1>Bienvenidos a Angular9</h1>
-    <br>
-    <app-entradas></app-entradas>
+    <h1>Bienvenidos a Angular 9!</h1>
+    <br />
+    <app-navbar></app-navbar>
+    <!-- De parte de miModulo pude acceder a este componente-->
+    <!-- <app-panel></app-panel> -->
+    <!--Manejo del router-->
+    <router-outlet></router-outlet>
+
+    <!--Se comentan los componentes ya que ahora es manejado por el router y no se muestran todos en una misma pagina -->
+    <!-- <app-entradas></app-entradas>
     <app-clientes></app-clientes>
     <app-estructura></app-estructura>
     <app-atributos></app-atributos>
     <app-formularios></app-formularios>
-    <app-usuarios></app-usuarios>
-
+    <app-usuarios></app-usuarios> -->
   </div>
 </div>

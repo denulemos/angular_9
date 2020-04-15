@@ -9,17 +9,17 @@ import { HijoComponent } from '../hijo/hijo.component';
 })
 export class MadreComponent implements OnInit  {
 
+  //De esta manera, madre puede acceder a todos los metodos y propiedades publicos del hijo
   @ViewChild(HijoComponent, {static: false}) hijo : HijoComponent;
 
   mensaje : string = '';
   contador : number =  0
   refInterval : any
 
-  constructor() { 
+  constructor() {
     console.log('constructor madre');
   }
-  
-  //https://angular.io/guide/lifecycle-hooks
+
   ngOnInit() {
     this.refInterval = setInterval(() => {
       console.log('Soy la madre ' + this.contador++)
@@ -27,6 +27,7 @@ export class MadreComponent implements OnInit  {
     console.log('ngOnInit madre');
   }
 
+  //Chequeos de estados de la madre, LifeCycle Hooks
   ngDoCheck() {
     console.log('ngDoCheck madre');
   }

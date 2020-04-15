@@ -1,6 +1,33 @@
+Angular 9
+*Es un framework MVC hecho por google y Microsoft, es la evolucion de un Angular mas viejo que tenia el mismo nombre y hoy es AngularJS, el cual
+funcionaba como una alternativa a JQuery
+*Se aplica al desarollo de webs complejas
+*Basado en Typescript, que es basado en objetos incorporados a JS, con tipado estatico opcional. Es basado en lenguajes POO comunes, como java.
+*Este lenguaje se transpila (Transpilador => Herramienta que traduce el codigo a JS5, uno en comun comprendido por los navegadores)
+*Angular usa NodeJS (Recomendado >=version10), node es una plataforma que permite ejecutar JS fuera del navegador, para hacer otros tipos de aplicaciones. El mismo
+automatiza procesos de desarollo y viene con NPM
+*Angular crea aplicaciones RESTFUL, el cual junta backend con frontend mediante una API REST.
+*package-lock.json => Para cada dependencia instalada, las dependencias de las cuales depende
+
+--Version node--
+node -version
+
+--Juntar codigo dentro de una misma ventana de IDE para mejor visualizacion--
+Alt + Z
+
+--Instalar Angular9--
+npm -i @angular/cli -g
+
+--Crear proyecto angular--
+ng new "nombreApp"
+
+--Instalar angularJS--
+npm i angular@1.7.9
+
 --Crear nuevo componente--
 ng g c componentes/navbar
 *Si la carpeta componentes no existe, es creada, se crea el componente "navbar"
+*App.module importa el nuevo componente automaticamente
 
 --Instalar boostrap, Jquery y Popper--
 npm i boostrap jquery popper.js
@@ -9,7 +36,8 @@ npm i jquery@3.4.1
 *Se deben importar tambien en angular.json, primero se declara Json y luego bootstrap, tanto ruta del js como css
 
 --Ejecutar proyecto--
-ng serve
+ng serve -o
+*Comando -o para abrir el navegador con el proyecto ya abierto
 
 --Crear modulo--
 ng g miModulo

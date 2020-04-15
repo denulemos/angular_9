@@ -1,3 +1,4 @@
+//Este archivo representa la organizacion de componentes del proyecto. Es la entidad de trabajo de la cual Angular se apoya.
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 //Importar router

@@ -40,6 +40,22 @@ Se usa con **NodeJS (Version +10)** que..
 * Crear directiva personalizada
   `ng g d directivas/resaltar`
 
+### Hints Codigo
+
+* Declarar una variable
+  `mensaje : string = "variable"`
+* **Interpolacion** (**Data Binding**), mostrar el valor de una variable en el HTML. 
+  `{{mensaje}} `
+* **Property Binding**. Hacer interpolaciones en propiedades HTML. 
+  `valor: number = 123`
+  `<input type="text" value="{{valor}}"/>`
+* **Event Binding**, que ante un cierto evento, cambie algo del TypeScript
+  `<button (click) = "contador++"/>` <- Le sumo 1 al contador 
+  `{{contador}} => contador: number = 1`
+* **Double Data Binding**
+  `<input> "Hola"</input>` => `<p>Hola </p>`
+  `<input type="text" (input) = "modificar() />"` => Cada vez que escribo algo en el input, llamo a esa funcion 
+
 ### Despliegue a Producción
 
 `ng build --prod (--base-red /carpeta1` -> Guardamos el codigo en alguna carpeta del servidor que no sea el root.

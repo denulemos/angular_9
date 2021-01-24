@@ -44,17 +44,17 @@ Se usa con **NodeJS (Version +10)** que..
 
 * Declarar una variable
   `mensaje : string = "variable"`
-* **Interpolacion** (**Data Binding**), mostrar el valor de una variable en el HTML. 
+* **Interpolacion** (**Data Binding**), mostrar el valor de una variable en el HTML.
   `{{mensaje}} `
-* **Property Binding**. Hacer interpolaciones en propiedades HTML. 
+* **Property Binding**. Hacer interpolaciones en propiedades HTML.
   `valor: number = 123`
   `<input type="text" value="{{valor}}"/>`
 * **Event Binding**, que ante un cierto evento, cambie algo del TypeScript
-  `<button (click) = "contador++"/>` <- Le sumo 1 al contador 
+  `<button (click) = "contador++"/>` <- Le sumo 1 al contador
   `{{contador}} => contador: number = 1`
 * **Double Data Binding**
   `<input> "Hola"</input>` => `<p>Hola </p>`
-  `<input type="text" (input) = "modificar() />"` => Cada vez que escribo algo en el input, llamo a esa funcion 
+  `<input type="text" (input) = "modificar() />"` => Cada vez que escribo algo en el input, llamo a esa funcion
 
 ### Despliegue a Producción
 
@@ -81,8 +81,15 @@ Se usa con **NodeJS (Version +10)** que..
 * **main.ts** -> Arranca el proyecto
 * **angular.json** -> Configuracion del proyecto, assets, etc..
 
+## Apuntes
 
+### Event Binding
 
+Que ante un evento cambie algo
+`<button (click)="contador++">`
+y luego `{{contador}}` se ira sumando en si mismo cada vez que hago click en un boton determinado.
 
+### Double data Binding
 
+Puedo usar `ng-model`, para eso necesito importar lo siguiente `import {FormsModule} from '@angular/forms`. Luego, en nuestro input `<input [(ngModel)] = "valor">{{valor}} </input>`
 
